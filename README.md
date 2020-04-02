@@ -1,6 +1,5 @@
 <p align="center"><a href="https://www.verygoodsecurity.com/"><img src="https://avatars0.githubusercontent.com/u/17788525" width="128" alt="VGS Logo"></a></p>
-<p align="center"><b>GoLang code snippets to use VGS proxy</b></p>
-<p align="center"><i>Sample of inbound redaction and outbound revealing go examples</i></p>
+<p align="center"><b>GoLang snippets to use VGS proxy to redact and reveal</b></p>
 
 ## Inbound redaction snippet
 To test with the example below, please replace the Tenant ID with yours.
@@ -54,7 +53,7 @@ To test with the example below, please replace the Tenant ID with yours.
 
 ## Outbound revealing snippet
 This is a example to send POST request to Stripe API  https://stripe.com/docs/api/tokens/create_card  
-To test with the example, copy the SANDBOX cert.pem in VGS dashboard to your local environment, reset the path to your cert and replace the Tenant ID, Username, Password with yours.
+To test with the example, copy the SANDBOX cert.pem in VGS dashboard to your local environment, reset the path to your cert and replace the Tenant ID, Username, Password with yours. You should also use the token generated from your vault.
 ```go
 package main
 
