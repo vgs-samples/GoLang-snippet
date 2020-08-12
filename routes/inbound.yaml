@@ -1,0 +1,81 @@
+data:
+  - attributes:
+      created_at: '2020-08-12T18:37:27'
+      destination_override_endpoint: 'https://echo.apps.verygood.systems'
+      entries:
+        - classifiers: {}
+          config:
+            condition: AND
+            rules:
+              - condition: null
+                expression:
+                  field: PathInfo
+                  operator: equals
+                  type: string
+                  values:
+                    - /post
+              - condition: null
+                expression:
+                  field: ContentType
+                  operator: equals
+                  type: string
+                  values:
+                    - application/json
+          id: 7225f25d-fd7d-4a12-9870-3090a052fd54
+          id_selector: null
+          operation: REDACT
+          operations: null
+          phase: REQUEST
+          public_token_generator: UUID
+          targets:
+            - body
+          token_manager: PERSISTENT
+          transformer: JSON_PATH
+          transformer_config:
+            - $.card
+          transformer_config_map: null
+        - classifiers: {}
+          config:
+            condition: AND
+            rules:
+              - condition: null
+                expression:
+                  field: PathInfo
+                  operator: equals
+                  type: string
+                  values:
+                    - /post
+              - condition: null
+                expression:
+                  field: ContentType
+                  operator: equals
+                  type: string
+                  values:
+                    - application/json
+          id: c9957e54-059e-477b-8931-d51d8e11ff9a
+          id_selector: null
+          operation: REDACT
+          operations: null
+          phase: REQUEST
+          public_token_generator: UUID
+          targets:
+            - body
+          token_manager: VOLATILE
+          transformer: JSON_PATH
+          transformer_config:
+            - $.cvc
+          transformer_config_map: null
+          type: null
+      host_endpoint: (.*)\.verygoodproxy\.com
+      id: eab08f05-49e0-4f3b-bbef-d6220c63480d
+      ordinal: null
+      port: 0
+      protocol: http
+      source_endpoint: '*'
+      tags:
+        name: 'https://echo.apps.verygood.systems-cornsilk-cylinder'
+        source: WizardInbound
+      updated_at: '2020-08-12T19:35:00'
+    id: eab08f05-49e0-4f3b-bbef-d6220c63480d
+    type: rule_chain
+version: 1

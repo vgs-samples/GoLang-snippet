@@ -1,0 +1,68 @@
+data:
+  - attributes:
+      created_at: '2020-08-12T18:48:23'
+      destination_override_endpoint: '*'
+      entries:
+        - classifiers: {}
+          config:
+            condition: AND
+            rules:
+              - condition: null
+                expression:
+                  field: PathInfo
+                  operator: matches
+                  type: string
+                  values:
+                    - (.*)
+          id: 2493311b-4051-4da6-af81-24cff5f29260
+          id_selector: null
+          operation: ENRICH
+          operations: null
+          phase: REQUEST
+          public_token_generator: UUID
+          targets:
+            - body
+          token_manager: VOLATILE
+          transformer: FORM_FIELD
+          transformer_config:
+            - 'card[cvc]'
+          transformer_config_map: null
+        - classifiers: {}
+          config:
+            condition: AND
+            rules:
+              - condition: null
+                expression:
+                  field: PathInfo
+                  operator: matches
+                  type: string
+                  values:
+                    - (.*)
+          id: d74bae6e-5e36-461c-b837-3c2402442059
+          id_selector: null
+          operation: ENRICH
+          operations: null
+          phase: REQUEST
+          public_token_generator: FPE_SIX_T_FOUR
+          targets:
+            - body
+          token_manager: PERSISTENT
+          transformer: FORM_FIELD
+          transformer_config:
+            - 'card[number]'
+          transformer_config_map: null
+          type: null
+      host_endpoint: api\.stripe\.com
+      id: 4c661e8d-2bbb-47aa-b523-87b62e0e74e0
+      ordinal: null
+      port: 80
+      protocol: http
+      source_endpoint: '*'
+      tags:
+        integration: stripe--formData
+        name: stripe direct outbound
+        source: IntegrationTemplates
+      updated_at: '2020-08-12T19:21:11'
+    id: 4c661e8d-2bbb-47aa-b523-87b62e0e74e0
+    type: rule_chain
+version: 1

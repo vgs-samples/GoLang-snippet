@@ -10,12 +10,15 @@
   )
 
   type Payload struct {
-    Account string 'json:"account_number"'
+		Number string `json:"card"`
+		CVC string `json:"cvc"`
   }
 
   func main() {
     data := Payload{
-      // fill struct
+			// fill struct
+			Number: "4242424242424242",
+			CVC: "123",
     }
     payloadBytes, err := json.Marshal(data)
     if err != nil {
@@ -24,7 +27,7 @@
 
     body := bytes.NewReader(payloadBytes)
 
-    req, err := http.NewRequest("POST", "https://<Tenant ID>.SANDBOX.verygoodproxy.com/post", body)
+    req, err := http.NewRequest("POST", "https://tntn5akm79c.SANDBOX.verygoodproxy.com/post", body)
     if err != nil {
       log.Fatal(err)
     }
